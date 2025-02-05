@@ -10,7 +10,7 @@ public class Main {
         Map<T,Integer> result = new HashMap<>();
         for (T object:mas){
             if (result.containsKey(object)){
-                result.replace(object,result.get(object)+1);
+                result.merge(object,1, Integer::sum);
             }
             else result.put(object,1);
         }
